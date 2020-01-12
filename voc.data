@@ -2,4 +2,4 @@ classes= 20
 train  = /content/darknet/ML-AI-Project/build/darknet/x64/data/voc/train.txt
 valid  = /content/darknet/ML-AI-Project/build/darknet/x64/data/voc/2007_test.txt
 names = data/voc.names
-backup = /content/darknet/ML-AI-Project/build/backup/
+backup = /content/darknet/ML-AI-Project/build/backup
