@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/7f31b915962841.5629a14979cd1.jpg</bam_src>
+	<filename>109579707</filename>
+	<size>
+		<width>554</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>10</xmin>
+			<ymin>11</ymin>
+			<xmax>554</xmax>
+			<ymax>880</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,33 @@
+<annotation>
+	<bam_src>https://m2.behance.net/rendition/pm/17148595/disp/f55a34a0c1cfa048766e6777fa3fcdf4.jpg</bam_src>
+	<filename>116679001</filename>
+	<size>
+		<width>600</width>
+		<height>463</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>dog</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>280</xmin>
+			<ymin>30</ymin>
+			<xmax>550</xmax>
+			<ymax>404</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>93</ymin>
+			<xmax>304</xmax>
+			<ymax>407</ymax>
+		</bndbox>
+	</object>
+</annotation>

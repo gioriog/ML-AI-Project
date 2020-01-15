@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://m2.behance.net/rendition/pm/11500117/disp/0b4593eb6918d7351b8ac6f38b47399c.jpg</bam_src>
+	<filename>116845071</filename>
+	<size>
+		<width>600</width>
+		<height>840</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>bird</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>1</ymin>
+			<xmax>1</xmax>
+			<ymax>1</ymax>
+		</bndbox>
+	</object>
+</annotation>

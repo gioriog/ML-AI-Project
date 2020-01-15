@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/e5e62920560829.562ed5cc2c134.jpg</bam_src>
+	<filename>138259635</filename>
+	<size>
+		<width>600</width>
+		<height>876</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>bird</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>69</xmin>
+			<ymin>252</ymin>
+			<xmax>298</xmax>
+			<ymax>615</ymax>
+		</bndbox>
+	</object>
+</annotation>

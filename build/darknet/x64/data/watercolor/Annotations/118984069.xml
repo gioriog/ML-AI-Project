@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://m2.behance.net/rendition/pm/17510147/disp/57e4337acae2646c83f655b45fcf0c91.jpg</bam_src>
+	<filename>118984069</filename>
+	<size>
+		<width>600</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>16</xmin>
+			<ymin>16</ymin>
+			<xmax>597</xmax>
+			<ymax>799</ymax>
+		</bndbox>
+	</object>
+</annotation>
