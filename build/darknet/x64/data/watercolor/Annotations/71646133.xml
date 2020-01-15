@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/3baadd9716665.560d8d084dbae.jpg</bam_src>
+	<filename>71646133</filename>
+	<size>
+		<width>600</width>
+		<height>419</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>bicycle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>240</xmin>
+			<ymin>176</ymin>
+			<xmax>482</xmax>
+			<ymax>340</ymax>
+		</bndbox>
+	</object>
+</annotation>
