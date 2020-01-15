@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://m2.behance.net/rendition/pm/4063423/disp/8d184ea8c9c0159dfef188d79f6f8da9.JPG</bam_src>
+	<filename>31786013</filename>
+	<size>
+		<width>600</width>
+		<height>750</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>cat</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>1</ymin>
+			<xmax>1</xmax>
+			<ymax>1</ymax>
+		</bndbox>
+	</object>
+</annotation>

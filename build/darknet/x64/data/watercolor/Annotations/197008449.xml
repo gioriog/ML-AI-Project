@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/5dfcae25309275.56304ee2e1607.jpg</bam_src>
+	<filename>197008449</filename>
+	<size>
+		<width>600</width>
+		<height>809</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>59</xmin>
+			<ymin>69</ymin>
+			<xmax>541</xmax>
+			<ymax>654</ymax>
+		</bndbox>
+	</object>
+</annotation>

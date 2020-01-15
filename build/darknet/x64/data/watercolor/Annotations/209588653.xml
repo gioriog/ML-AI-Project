@@ -1,0 +1,33 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/06556c33077757.569ef6a7a856d.png</bam_src>
+	<filename>209588653</filename>
+	<size>
+		<width>500</width>
+		<height>727</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>102</xmin>
+			<ymin>304</ymin>
+			<xmax>395</xmax>
+			<ymax>588</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>241</xmin>
+			<ymin>336</ymin>
+			<xmax>500</xmax>
+			<ymax>690</ymax>
+		</bndbox>
+	</object>
+</annotation>
