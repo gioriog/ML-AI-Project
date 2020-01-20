@@ -1,0 +1,33 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/a9599730219703.561897734cc3d.jpg</bam_src>
+	<filename>194222523</filename>
+	<size>
+		<width>600</width>
+		<height>368</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>dog</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>314</xmin>
+			<ymin>92</ymin>
+			<xmax>535</xmax>
+			<ymax>324</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>dog</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>84</xmin>
+			<ymin>100</ymin>
+			<xmax>214</xmax>
+			<ymax>290</ymax>
+		</bndbox>
+	</object>
+</annotation>

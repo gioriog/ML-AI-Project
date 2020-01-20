@@ -1,0 +1,21 @@
+<annotation>
+	<bam_src>https://mir-s3-cdn-cf.behance.net/project_modules/disp/31797a11249417.560f48a8139f0.png</bam_src>
+	<filename>81484597</filename>
+	<size>
+		<width>532</width>
+		<height>880</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>cat</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>17</xmin>
+			<ymin>25</ymin>
+			<xmax>532</xmax>
+			<ymax>857</ymax>
+		</bndbox>
+	</object>
+</annotation>
