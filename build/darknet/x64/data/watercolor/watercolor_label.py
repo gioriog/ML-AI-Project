@@ -47,8 +47,6 @@ wd = getcwd()
 for image_set in sets:
     if not os.path.exists('labels/'):
         os.makedirs('labels/')
-    #image_ids = open('ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
-    #list_file = open('%s_%s.txt'%(year, image_set), 'w')
     image_ids = open('ImageSets/Main/%s.txt'%(image_set)).readlines()
   
     list_file = open('%s.txt'%(image_set), 'w')
