@@ -24,7 +24,7 @@ def convert(size, box):
 
 def convert_annotation(image_id):
     in_file = open('Annotations/%s.xml'%(image_id))
-    out_file = open('labels/%s.txt'%(image_id), 'w')
+    out_file = open('DT_JPEGImages/%s.txt'%(image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')

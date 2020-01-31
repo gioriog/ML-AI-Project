@@ -24,7 +24,7 @@ def convert(size, box):
 
 def convert_annotation(year, image_id):
     in_file = open('VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id))
-    out_file = open('VOCdevkit/VOC%s/labels/%s.txt'%(year, image_id), 'w')
+    out_file = open('VOCdevkit/VOC%s/DT_JPEGImages/%s.txt'%(year, image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')
@@ -45,8 +45,8 @@ def convert_annotation(year, image_id):
 wd = getcwd()
 
 for year, image_set in sets:
-    if not os.path.exists('VOCdevkit/VOC%s/labels/'%(year)):
-        os.makedirs('VOCdevkit/VOC%s/labels/'%(year))
+    #if not os.path.exists('VOCdevkit/VOC%s/labels/'%(year)):
+        #os.makedirs('VOCdevkit/VOC%s/labels/'%(year))
     image_ids = open('VOCdevkit/VOC%s/ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
     list_file = open('%s_%s.txt'%(year, image_set), 'w')
     for image_id in image_ids:
