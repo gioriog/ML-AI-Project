@@ -3,18 +3,47 @@ import re
 
 os.chdir(os.path.dirname(os.path.abspath('pseudo_label.py')))
 
+index_classes={"aeroplane":0,
+                   "bicycle":1,
+                   "bird":2,
+                   "boat":3,
+                   "bottle":4,
+                   "bus":5,
+                   "car":6,
+                   "cat":7,
+                   "chair":8,
+                   "cow":9,
+                   "diningtable":10,
+                   "dog":11,
+                   "horse":12,
+                   "motorbike":13,
+                   "person":14,
+                   "pottedplant":15,
+                   "sheep":16,
+                   "sofa":17,
+                   "train":18,
+                   "tvmonitor":19}
 IN_FILE = '/content/darknet/result.txt'
 
 # change directory 
 parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 print("...scripting...\n")
 print("root: " + parent_path)
-DR_PATH = os.path.join(parent_path,'detection-results')
+DR_PATH = os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/labels')
 print('Saves results in: '+ DR_PATH)
 os.chdir(DR_PATH)
 
 SEPARATOR_KEY = 'Enter Image Path:'
 IMG_FORMAT = '.jpg'
+
+
+
+train_file=open(os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/train.txt'),'r')
+train_lines=train_file.readlines()
+train_file.close()
+
+corrupted=[]
+
 
 outfile = None
 with open(IN_FILE) as infile:
@@ -42,8 +71,20 @@ with open(IN_FILE) as infile:
         left, top, width, height = [int(s) for s in bbox.split() if s.lstrip('-').isdigit()]
         right = left + width
         bottom = top + height
-
-        outfile.write("{} {} {} {} {} {}\n".format(class_name, float(confidence)/100, left, top, right, bottom))
+        if class_name in index_classes:
+          outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
+        else:
+          print(image_name)
+      else:
+        corrupted.append(image_name)
       #print("{} {} {} {} {} {}\n".format(class_name, float(confidence)/100, left, top, right, bottom))
 
-
+train_file=open(os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/train.txt'),'w')
+for line in train_lines:
+  trovato=False
+  for corr in corrupted:
+    if line.endswith(corr+".jpg"):
+      trovato=True
+      break
+  if trovato==False:
+    train_file.write(line)
