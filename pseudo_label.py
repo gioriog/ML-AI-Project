@@ -36,8 +36,6 @@ os.chdir(DR_PATH)
 SEPARATOR_KEY = 'Enter Image Path:'
 IMG_FORMAT = '.jpg'
 
-
-
 train_file=open(os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/train.txt'),'r')
 train_lines=train_file.readlines()
 train_file.close()
@@ -59,6 +57,10 @@ with open(IN_FILE) as infile:
       # close file
       if outfile is not None:
         outfile.close()
+      
+      annotationfile = open (os.path.join(DR_PATH, image_name + '_1.txt'), 'r')
+      annotations = annotationfile.readlines()
+      annotationfile.close()
       outfile = open(os.path.join(DR_PATH, image_name + '.txt'), 'w')
     elif outfile is not None:
       class_name, info = line.split(':', 1)
@@ -71,13 +73,27 @@ with open(IN_FILE) as infile:
         left, top, width, height = [int(s) for s in bbox.split() if s.lstrip('-').isdigit()]
         right = left + width
         bottom = top + height
+        print("Img="+image_name+ "Ann :" + str(annotations)+ "Class:"+class_name)
+          
         if class_name in index_classes:
-          outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
+          for a in annotations:
+            a=a.strip()
+            if a == class_name:
+              outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
+              print("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
+              break    
+          #outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
         else:
           print(image_name)
       else:
         corrupted.append(image_name)
+        print("NON ENTRO")
       #print("{} {} {} {} {} {}\n".format(class_name, float(confidence)/100, left, top, right, bottom))
+
+
+## Eliminate corrupted files
+
+corrupted = [ ]
 
 train_file=open(os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/train.txt'),'w')
 for line in train_lines:
@@ -85,6 +101,7 @@ for line in train_lines:
   for corr in corrupted:
     if line.endswith(corr+".jpg"):
       trovato=True
+      print("Find image with no bbox :"+corr)
       break
   if trovato==False:
     train_file.write(line)
