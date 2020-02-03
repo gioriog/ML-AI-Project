@@ -18,7 +18,7 @@ def copyFiles(src,dst,file,ext):
 
 	# copy from src to dst
 	for f in files:
-		shutil.move(path.join(src,f)+ext, dst+ext)
+		shutil.copy(path.join(src,f)+ext, dst+ext)
 
 	
 #COMIC
