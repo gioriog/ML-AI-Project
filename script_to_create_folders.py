@@ -17,8 +17,8 @@ def copyFiles(src,dst,file,ext):
 	#sys.stdout.write("".join(files))
 
 	# copy from src to dst
-	for f in files:
-		shutil.copy(path.join(src,f)+ext, dst+ext)
+	for f in img_files:
+		shutil.copy(path.join(src,f), path.join(dst,f))
 
 	
 #COMIC
