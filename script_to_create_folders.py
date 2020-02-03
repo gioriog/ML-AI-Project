@@ -18,7 +18,7 @@ def copyFiles(src,dst,file,ext):
 
 	# copy from src to dst
 	for f in files:
-		shutil.move(path.join(src,f), dst)
+		shutil.move(path.join(src,f)+ext, dst+ext)
 
 	
 #COMIC
@@ -26,8 +26,8 @@ train_path = "/content/ML-AI-Project/build/darknet/x64/data/comic/ImageSets/Main
 test_path = "/content/ML-AI-Project/build/darknet/x64/data/comic/ImageSets/Main/test.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/comic/JPEGImages/"
-train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TrainB/"
-test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestB/"
+train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainB/"
+test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/testB/"
 
 copyFiles(src,train_dst,train_path,".jpg")
 copyFiles(src,test_dst,test_path,".jpg")
@@ -39,8 +39,8 @@ train_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC200
 test_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2007/ImageSets/Main/test.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2007/JPEGImages/"
-train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TrainA/"
-test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestA/"
+train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainA/"
+test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/testA/"
 
 copyFiles(src,train_dst,train_path,".jpg")
 copyFiles(src,test_dst,test_path,".jpg")
@@ -48,14 +48,14 @@ copyFiles(src,test_dst,test_path,".jpg")
 
 #VOC 2012
 train_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/ImageSets/Main/train.txt"
-test_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/ImageSets/Main/test.txt"
+#test_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/ImageSets/Main/test.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/JPEGImages/"
-train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TrainA/"
-test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestA/"
+train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainA/"
+#test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestA/"
 
 copyFiles(src,train_dst,train_path,".jpg")
-copyFiles(src,test_dst,test_path,".jpg")
+#copyFiles(src,test_dst,test_path,".jpg")
 
 
 
@@ -66,8 +66,8 @@ train_path = "/content/ML-AI-Project/build/darknet/x64/data/watercolor/ImageSets
 test_path = "/content/ML-AI-Project/build/darknet/x64/data/watercolor/ImageSets/Main/test.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/watercolor/JPEGImages/"
-train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TrainA/"
-test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestA/"
+train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainA/"
+test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/testA/"
 
 copyFiles(src,train_dst,train_path,".jpg")
 copyFiles(src,test_dst,test_path,".jpg")
@@ -80,8 +80,8 @@ train_path = "/content/ML-AI-Project/build/darknet/x64/data/clipart/ImageSets/Ma
 test_path = "/content/ML-AI-Project/build/darknet/x64/data/clipart/ImageSets/Main/test.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/clipart/JPEGImages/"
-train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TrainA/"
-test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestA/"
+train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainA/"
+test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/testA/"
 
 copyFiles(src,train_dst,train_path,".jpg")
 copyFiles(src,test_dst,test_path,".jpg")
