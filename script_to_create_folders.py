@@ -36,6 +36,7 @@ copyFiles(src,test_dst,test_path,".jpg")
 
 #VOC 2007
 train_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2007/ImageSets/Main/train.txt"
+val_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2007/ImageSets/Main/val.txt"
 test_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2007/ImageSets/Main/test.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2007/JPEGImages/"
@@ -43,19 +44,21 @@ train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainA/"
 test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/testA/"
 
 copyFiles(src,train_dst,train_path,".jpg")
+copyFiles(src,test_dst,train_path,".jpg")
+copyFiles(src,test_dst,val_path,".jpg")
 copyFiles(src,test_dst,test_path,".jpg")
 
 
 #VOC 2012
 train_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/ImageSets/Main/train.txt"
-#test_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/ImageSets/Main/test.txt"
+val_path = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/ImageSets/Main/val.txt"
 
 src = "/content/ML-AI-Project/build/darknet/x64/data/voc/VOCdevkit/VOC2012/JPEGImages/"
 train_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/trainA/"
-#test_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/TestA/"
+val_dst = "/content/pytorch-CycleGAN-and-pix2pix/datasets/Proj/testA/"
 
 copyFiles(src,train_dst,train_path,".jpg")
-#copyFiles(src,test_dst,test_path,".jpg")
+copyFiles(src,val_dst,val_path,".jpg")
 
 
 
