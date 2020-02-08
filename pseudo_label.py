@@ -3,26 +3,7 @@ import re
 
 os.chdir(os.path.dirname(os.path.abspath('pseudo_label.py')))
 
-index_classes={"aeroplane":0,
-                   "bicycle":1,
-                   "bird":2,
-                   "boat":3,
-                   "bottle":4,
-                   "bus":5,
-                   "car":6,
-                   "cat":7,
-                   "chair":8,
-                   "cow":9,
-                   "diningtable":10,
-                   "dog":11,
-                   "horse":12,
-                   "motorbike":13,
-                   "person":14,
-                   "pottedplant":15,
-                   "sheep":16,
-                   "sofa":17,
-                   "train":18,
-                   "tvmonitor":19}
+index_classes={"bicycle":0,"bird":1,"car":2,"cat":3,"dog":4,"person":5}
 IN_FILE = '/content/darknet/result.txt'
 
 # change directory 
