@@ -58,7 +58,6 @@ with open(IN_FILE) as infile:
       # close file
       if outfile is not None:
         outfile.close()
-        break
 
       #ANNOTATION FILE OF INOUE
       annotationfile = open (os.path.join(ANN_PATH, image_name + '.xml'), 'r')
@@ -88,7 +87,6 @@ with open(IN_FILE) as infile:
         
         right = left + width
         bottom = top + height
-        print(str(left),str(top),str(right),str(bottom))
         print("Img="+image_name+ " Ann :" + str(annotations)+ "Class:"+class_name)
           
         if class_name in index_classes:
@@ -98,7 +96,7 @@ with open(IN_FILE) as infile:
               b = (float(left), float(right), float(top), float(bottom))
               bb=convert((wA,hA), b)
               
-              outfile.write(str(index_classes[class_name])+ " " + " ".join([str(a) for a in bb])+ " "+ confidence)
+              outfile.write(str(index_classes[class_name])+ " " + " ".join([str(a) for a in bb])+ " "+ confidence+"\n")
               print(str(index_classes[class_name])+ " " + " ".join([str(a) for a in bb])+ " "+ confidence)
               break    
           #outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
@@ -136,6 +134,14 @@ for line in train_lines:
 train_file=open(os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/train.txt'),'r')
 train_lines=train_file.readlines()
 for line in train_lines:
+  print("")
+  print("")
+  print("")
+  print("")
+  print("NEW FILE")
+  line=line.strip()
+  line=line.replace(".jpg","").split("/")
+  line=line[-1]
   annotationfile = open (os.path.join(DR_PATH, line + '_1.txt'), 'r')
   real_annotations = annotationfile.readlines()
   annotationfile.close()
@@ -144,27 +150,36 @@ for line in train_lines:
   our_annotations = annotationfile.readlines()
   annotationfile.close()
 
-  annotationfile = open (os.path.join(DR_PATH, line + '.txt'), 'w')
+  outfile = open (os.path.join(DR_PATH, line + '.txt'), 'w')
   for ann in real_annotations:
-    selected=None
+    ann=ann.strip()
+    selected=""
     for our_ann in our_annotations:
-      if our_ann.startswith(index_classes[ann.strip()]):
-        if selected==None:
+      if our_ann.startswith(str(index_classes[ann])):
+        print("Annotation: "+our_ann)
+        print("Confidence: "+our_ann.split()[-1])
+        if selected=="":
           selected=our_ann
+          print("SELECTED:"+selected)
         else:
           our_splits=our_ann.split()
           sel_splits=selected.split()
-          if float(our_splits[5])>float(sel_splits[5]):
+          our_a=int(our_splits[-1])
+          sel_a=int(sel_splits[-1])
+          print("cikoewujcvboiwqeoljvhbewqolivuubwqeoivuuwbeqlivjwebvoiuewqbvoiwqehb "+str(our_a)+" "+str(sel_a))
+          
+          if our_a>sel_a:
             selected=our_ann
+            print("CHANGED:"+selected)
     
-
-    selected_splits=selected.split()
-    selected_splits=selected_splits[:-1]
-    outfile.write(" ".join([a for a in selected_splits]))
-    print(" ".join([a for a in selected_splits]))
-    our_annotation.remove(selected)
+    if selected!="":
+      selected_splits=selected.split()
+      selected_splits=selected_splits[:-1]
+      outfile.write(" ".join([a for a in selected_splits]))
+      print("WRITTEN ON FILE:"+ " ".join([a for a in selected_splits]))
+      our_annotations.remove(selected)
               
-        
+  outfile.close()   
   
   
       
