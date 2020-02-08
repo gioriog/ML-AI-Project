@@ -6,7 +6,7 @@ from os.path import join
 
 sets=['train', 'test']
 # bisogna vedere se le classi elencate qui sono giuste
-classes = ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+classes = ["bicycle", "bird", "car", "cat", "dog", "person"]
 
 
 def convert(size, box):
