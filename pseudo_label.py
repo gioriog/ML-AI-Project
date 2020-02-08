@@ -17,6 +17,22 @@ os.chdir(DR_PATH)
 SEPARATOR_KEY = 'Enter Image Path:'
 IMG_FORMAT = '.jpg'
 
+
+
+def convert(size, box):
+    dw = 1./size[0]
+    dh = 1./size[1]
+    x = (box[0] + box[1])/2.0
+    y = (box[2] + box[3])/2.0
+    w = box[1] - box[0]
+    h = box[3] - box[2]
+    x = x*dw
+    w = w*dw
+    y = y*dh
+    h = h*dh
+    return (x,y,w,h)
+
+
 train_file=open(os.path.join(parent_path,'ML-AI-Project/build/darknet/x64/data/comic/train.txt'),'r')
 train_lines=train_file.readlines()
 train_file.close()
@@ -60,8 +76,11 @@ with open(IN_FILE) as infile:
           for a in annotations:
             a=a.strip()
             if a == class_name:
-              outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
-              print("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
+              b = (float(left), float(right), float(bottom), float(top))
+              bb=convert((width,height), b)
+              
+              outfile.write(str(index_classes[class_name])+ " " + " ".join([str(a) for a in bb]))
+              print(str(index_classes[class_name])+ " " + " ".join([str(a) for a in bb]))
               break    
           #outfile.write("{} {} {} {} {}\n".format(index_classes[class_name], left, top, width, height))
         else:
