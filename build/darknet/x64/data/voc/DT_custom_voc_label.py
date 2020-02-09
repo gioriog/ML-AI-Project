@@ -4,10 +4,10 @@ import os
 from os import listdir, getcwd
 from os.path import join
 
-sets=['train', 'test']
-# bisogna vedere se le classi elencate qui sono giuste
+sets=[('2012', 'train'), ('2012', 'val'), ('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
 classes = ["bicycle", "bird", "car", "cat", "dog", "person"]
+
 
 def convert(size, box):
     dw = 1./size[0]
@@ -22,12 +22,14 @@ def convert(size, box):
     h = h*dh
     return (x,y,w,h)
 
-def convert_annotation(image_id):
-    in_file = open('Annotations_Inoue/%s.xml'%(image_id))
-    out_file = open('labels/%s_1.txt'%(image_id), 'w')
+def convert_annotation(year, image_id):
+    in_file = open('VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id))
+    out_file = open('VOCdevkit/VOC%s/DT_JPEGImages/%s.txt'%(year, image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
-
+    size = root.find('size')
+    w = int(size.find('width').text)
+    h = int(size.find('height').text)
 
     for obj in root.iter('object'):
         difficult = obj.find('difficult').text
@@ -37,22 +39,17 @@ def convert_annotation(image_id):
         cls_id = classes.index(cls)
         xmlbox = obj.find('bndbox')
         b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
-        #bb = convert((w,h), b)
-        out_file.write(str(cls) + '\n')
-
+        bb = convert((w,h), b)
+        out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
 
 wd = getcwd()
 
-for image_set in sets:
-    if not os.path.exists('labels/'):
-        os.makedirs('labels/')
-    
-    image_ids = open('ImageSets/Main/%s.txt'%(image_set)).readlines()
-  
-    list_file = open('%s.txt'%(image_set), 'w')
+for year, image_set in sets:
+    #if not os.path.exists('VOCdevkit/VOC%s/labels/'%(year)):
+        #os.makedirs('VOCdevkit/VOC%s/labels/'%(year))
+    image_ids = open('VOCdevkit/VOC%s/ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
+    list_file = open('%s_%s.txt'%(year, image_set), 'w')
     for image_id in image_ids:
-        image_id = image_id.strip()
-
-        list_file.write(wd +'/JPEGImages/%s.jpg\n'%(image_id))
-        convert_annotation(image_id)
+        list_file.write('%s/VOCdevkit/VOC%s/DT_JPEGImages/%s.jpg\n'%(wd, year, image_id))
+        convert_annotation(year, image_id)
     list_file.close()
