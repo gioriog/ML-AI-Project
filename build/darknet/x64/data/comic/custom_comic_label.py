@@ -34,7 +34,8 @@ def convert_annotation(image_id):
         cls = obj.find('name').text
         if cls not in classes  or cls in found or int(difficult) == 1:
             continue
-        found.insert(cls)
+        
+        found.append(cls)
         cls_id = classes.index(cls)
         xmlbox = obj.find('bndbox')
         b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
